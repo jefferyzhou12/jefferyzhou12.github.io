@@ -1,0 +1,152 @@
+<!--HTML-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Space Adventurers</title>
+    <style>
+      /* CSS */
+      body {
+        background-color: rgb(150, 150, 150);
+      }
+      
+      h1 {
+        padding: 5px;
+        background-color: rgb(255, 255, 255, 0.75);
+        font-size: 75px;
+        position: absolute;
+        left: 30%;
+        top: 60%;
+      }
+      
+      a {
+        text-decoration: none;
+        color: white;
+      }
+      
+      .links {
+        display: inline;
+        background-color: black;
+        font-family: "Helvetica", sans-serif;
+        padding: 25px;
+        font-size: 25px;
+        border-radius: 10px;
+      }
+      
+      .links:hover, .links:focus, .links:active {
+        background-color: rgb(50, 50, 50);
+      }
+      
+      #heading {
+        background-color: black;
+      }
+      
+      #links-bar {
+        list-style-type: none;
+        color: white;
+        float: right;
+        position: relative;
+        right: 100px;
+        top: 25px;
+      }
+      
+      #title {
+        font-family: "Helvetica", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <!--Header-->
+    <div id="heading">
+      <a href="index.html">
+        <canvas id="logo"></canvas>
+      </a>
+      <ul id="links-bar">
+        <li class="links">
+          <a href="#play">Play</a>
+        </li>
+         - 
+        <li class="links">
+          <a href="#">Our Mission</a>
+        </li>
+         - 
+        <li class="links">
+          <a href="#">Our Project</a>
+        </li>
+         - 
+        <li class="links">
+          <a href="#">About Us</a>
+        </li>
+      </ul>
+    </div>
+    
+    <!--Home Screen-->
+    <img src="https://cdn2.eandtmagazine.org/sites/default/files/styles/uncropped_medium/public/2024-05/web_iss-station-on-orbit-of-the-earth-planet-elements-of-this-image-furnished-by-nasa_Credit_dima_zel_iStock-1253695434_1600x900.png?itok=6B9UVGPK" alt="The International Space Station" width="100%" height="100%" id="home-img">
+    <h1 id="title">Station: Survival</h1>
+
+    <!--Play Section-->
+    <div id="play">
+       
+    </div>
+    <script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      /* JavaScript Library Processing.js */
+      // Creates Logo
+      var logo = function (processingInstance) {
+        with (processingInstance) {
+          size(300, 100);
+          var backgroundColor = color(0, 0, 0);
+          background(backgroundColor);
+          rectMode(CENTER);
+          textAlign(CENTER, CENTER);
+          textFont(createFont("fantasy"), 20);
+          noStroke();
+          fill(255, 255, 255);
+          ellipse(width / 2, 50, 75, 75);
+          fill(0, 0, 0);
+          ellipse(width / 2 + 15, 40, 75, 75);
+          pushMatrix();
+          translate(width / 2 + 20, 40);
+          rotate(0.7);
+          fill(255, 255, 255);
+          rect(0, 0, 8, 50);
+          ellipse(0, -25, 10, 25);
+          stroke(0, 0, 0);
+          triangle(-4, 25, 4, 25, 0, 75);
+          noStroke();
+          triangle(-3, 25, -2, 35, -10, 30);
+          triangle(3, 25, 2, 35, 10, 30);
+          triangle(3, 10, 3, 25, 10, 27);
+          triangle(-3, 10, -3, 25, -10, 27);
+          popMatrix();
+          fill(backgroundColor, 150);
+          rect(width / 2, 75, 195, 20);
+          fill(255, 255, 255);
+          text("SPACE ADVENTURERS", width / 2, 75);
+        }
+      };
+      
+      // Displays Logo
+      var canvas = document.getElementById("logo");
+      var processingInstance = new Processing(canvas, logo);
+    </script>
+    <script>
+      /* JavaScript Library jQuery */
+      // Varibles
+      var heading = $("#heading");
+      var homeImg = $("#home-img");
+      var title = $("#title");
+      
+      // Hides Elements
+      heading.hide();
+      homeImg.hide();
+      title.hide();
+      
+      heading.slideDown(1000);
+      homeImg.fadeIn(500, function() {
+        title.slideDown(500);
+      });
+    </script>
+  </body>
+</html>
