@@ -7,21 +7,41 @@
     <style>
       /* CSS */
       body {
-        background-color: rgb(150, 150, 150);
+        background-color: black;
       }
       
       h1 {
         padding: 5px;
-        background-color: rgb(255, 255, 255, 0.75);
+        background-color: rgba(255, 255, 255, 0.75);
         font-size: 75px;
-        position: absolute;
+        position: fixed;
         left: 30%;
-        top: 60%;
+        top: 400px;
+      }
+      
+      p {
+        font-family: "Courier", monospace;
       }
       
       a {
         text-decoration: none;
         color: white;
+      }
+      
+      button {
+        font-size: 25px;
+        font-weight: bold;
+        background-color: rgb(225, 225, 225);
+        width: 500px;
+        height: 75px;
+        position: absolute;
+        left: 35%;
+        border: 5px solid rgb(100, 100, 100);
+        border-radius: 5px;
+      }
+      
+      button:hover, button:focus, button:active {
+        background-color: rgb(200)200, 200);
       }
       
       .links {
@@ -36,9 +56,20 @@
       .links:hover, .links:focus, .links:active {
         background-color: rgb(50, 50, 50);
       }
-      
+      .colored-background {
+        background-color: white;
+        padding: 20px;
+      }
       #heading {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100%;
         background-color: black;
+      }
+      
+      #main {
+        margin-top: 100px;
       }
       
       #links-bar {
@@ -52,6 +83,11 @@
       
       #title {
         font-family: "Helvetica", sans-serif;
+      }
+      
+      #play {
+        padding-top: 150px;
+        padding-bottom: 95px;
       }
     </style>
   </head>
@@ -79,14 +115,19 @@
         </li>
       </ul>
     </div>
-    
-    <!--Home Screen-->
-    <img src="https://cdn2.eandtmagazine.org/sites/default/files/styles/uncropped_medium/public/2024-05/web_iss-station-on-orbit-of-the-earth-planet-elements-of-this-image-furnished-by-nasa_Credit_dima_zel_iStock-1253695434_1600x900.png?itok=6B9UVGPK" alt="The International Space Station" width="100%" height="100%" id="home-img">
-    <h1 id="title">Station: Survival</h1>
 
-    <!--Play Section-->
-    <div id="play">
-       
+    <div id="main">
+      <!--Home Screen-->
+      <img src="https://cdn2.eandtmagazine.org/sites/default/files/styles/uncropped_medium/public/2024-05/web_iss-station-on-orbit-of-the-earth-planet-elements-of-this-image-furnished-by-nasa_Credit_dima_zel_iStock-1253695434_1600x900.png?itok=6B9UVGPK" alt="The International Space Station" width="100%" height="100%" id="home-img">
+      <h1 id="title">Station: Survival</h1>
+  
+      <!--Play Section-->
+      <div id="play" class="colored-background">
+        <p>No description avaible.</p>
+        <a href="#">
+          <button>Try <em>Station: Survival</em> For Yourself!</button>
+        </a>
+      </div>
     </div>
     <script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -137,16 +178,42 @@
       var heading = $("#heading");
       var homeImg = $("#home-img");
       var title = $("#title");
+      var window = this;
+
+      // Functions
+      $.fn.followTo = function (pos) {
+        var $this = this;
+        var $window = $(window);
+        var startPos = 400;
+        var endPos = pos + startPos;
+        $window.scroll(function(e) {
+          if ($window.scrollTop() >= pos) {
+            $this.css({
+              position: "absolute",
+              top: endPos
+            });
+          } else {
+            $this.css({
+              position: "fixed",
+              top: startPos
+            });
+          }
+        });
+      };
       
       // Hides Elements
       heading.hide();
       homeImg.hide();
       title.hide();
-      
+
+      // Starting Animations
       heading.slideDown(1000);
-      homeImg.fadeIn(500, function() {
-        title.slideDown(500);
+      homeImg.fadeIn(1000, function() {
+        title.slideDown(450);
       });
+
+      // SFX Animations
+      $("#title").followTo(520);
     </script>
   </body>
 </html>
