@@ -10,13 +10,8 @@
         background-color: black;
       }
       
-      h1 {
-        padding: 5px;
-        background-color: rgba(255, 255, 255, 0.75);
-        font-size: 75px;
-        position: fixed;
-        left: 30%;
-        top: 400px;
+      h2 {
+        font-size: 40px;
       }
       
       p {
@@ -66,6 +61,7 @@
         left: 0px;
         width: 100%;
         background-color: black;
+        z-index: 1;
       }
       
       #main {
@@ -83,11 +79,31 @@
       
       #title {
         font-family: "Helvetica", sans-serif;
+        padding: 5px;
+        background-color: rgba(255, 255, 255, 0.75);
+        font-size: 75px;
+        position: fixed;
+        left: 30%;
+        top: 400px;
       }
       
       #play {
         padding-top: 150px;
         padding-bottom: 95px;
+      }
+      
+      #our-mission {
+        margin-top: 50px;
+        padding: 20px;
+        font-family: "Helvetica", sans-serif;
+        color: white;
+        background-color: rgba(50, 50, 50, 0.75);
+      }
+      
+      #background-img {
+        position: fixed;
+        top: 0px;
+        z-index: -1;
       }
     </style>
   </head>
@@ -103,7 +119,7 @@
         </li>
          - 
         <li class="links">
-          <a href="#">Our Mission</a>
+          <a href="#our-mission">Our Mission</a>
         </li>
          - 
         <li class="links">
@@ -127,6 +143,17 @@
         <a href="#">
           <button>Try <em>Station: Survival</em> For Yourself!</button>
         </a>
+      </div>
+      
+      <!--Background Image-->
+      <img src="https://static.euronews.com/articles/stories/04/03/37/22/1440x810_cmsv2_00552c61-5a59-51d2-89c5-3078243af9f2-4033722.jpg" alt="Station: Survival Gameplay" width="98.9%" height="100%" id="background-img">
+      
+      <!--Our Mission Section-->
+      <div id="our-mission">
+        <h2>Our Mission</h2>
+        <p>
+          Essay by Samuel
+        </p>
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script>
@@ -178,10 +205,11 @@
       var heading = $("#heading");
       var homeImg = $("#home-img");
       var title = $("#title");
+      var backgroundImg = $("#background-img");
       var window = this;
 
       // Functions
-      $.fn.followTo = function (pos) {
+      $.fn.followTo = function(pos) {
         var $this = this;
         var $window = $(window);
         var startPos = 400;
@@ -205,11 +233,13 @@
       heading.hide();
       homeImg.hide();
       title.hide();
-
+      backgroundImg.hide();
+      
       // Starting Animations
       heading.slideDown(1000);
       homeImg.fadeIn(1000, function() {
         title.slideDown(450);
+        backgroundImg.show();
       });
 
       // SFX Animations
