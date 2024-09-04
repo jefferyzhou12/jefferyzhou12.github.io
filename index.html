@@ -11,7 +11,8 @@
       }
       
       h2 {
-        font-size: 40px;
+        font-family: "Helvetica", sans-serif;
+        font-size: 50px;
       }
       
       p {
@@ -52,16 +53,23 @@
         background-color: rgb(50, 50, 50);
       }
       .colored-background {
+        margin-top: 100px;
         background-color: white;
         padding: 20px;
       }
+      
+      .about-us-imgs {
+        border: 1px dashed black;
+        border-radius: 50%;
+      }
+      
       #heading {
         position: fixed;
         top: 0px;
         left: 0px;
         width: 100%;
         background-color: black;
-        z-index: 1;
+        z-index: 2;
       }
       
       #main {
@@ -85,9 +93,12 @@
         position: fixed;
         left: 30%;
         top: 400px;
+        z-index: 1;
       }
       
       #play {
+        position: relative;
+        bottom: 110px;
         padding-top: 150px;
         padding-bottom: 95px;
       }
@@ -123,11 +134,11 @@
         </li>
          - 
         <li class="links">
-          <a href="#">Our Project</a>
+          <a href="#our-project">Our Project</a>
         </li>
          - 
         <li class="links">
-          <a href="#">About Us</a>
+          <a href="#about-us">About Us</a>
         </li>
       </ul>
     </div>
@@ -154,6 +165,20 @@
         <p>
           Essay by Samuel
         </p>
+      </div>
+      <!--Our Project Section-->
+      <div id="our-project" class="colored-background">
+        <h2>Our Project</h2>
+        <p>
+          Description by Samuel
+        </p>
+      </div>
+      
+      <!--About Us Section-->
+      <div id="about-us" class="colored-background">
+        <h2>About Us</h2>
+        <img src="https://assets.spaceappschallenge.org/media/images/WIN_20240828_19_09_57_Pro.2e16d0ba.fill-64x64.jpg" alt="Jeff Zhou" width="200px" height="200px" class="about-us-imgs">
+        <img src="https://images.spaceappschallenge.org/avatars/40k6q-IlkAU6zCicm3Abn4_9Hs0=/87395/fill-48x48/" alt="Caleb Li" width="200px" height="200px" class="about-us-imgs">
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script>
@@ -236,12 +261,13 @@
       backgroundImg.hide();
       
       // Starting Animations
-      heading.slideDown(1000);
-      homeImg.fadeIn(1000, function() {
-        title.slideDown(450);
+      heading.slideDown(1000, function() {
+        title.slideDown(750);
+      });
+      homeImg.fadeIn(2000, function() {
         backgroundImg.show();
       });
-
+      
       // SFX Animations
       title.followTo(520);
     </script>
