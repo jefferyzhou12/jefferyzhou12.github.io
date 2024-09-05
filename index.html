@@ -15,7 +15,16 @@
         font-size: 50px;
       }
       
+      h3 {
+        float: right;
+        position: relative;
+        bottom: 40px;
+        right: 100px;
+      }
+      
       p {
+        font-size: 20px;
+        font-weight: bold;
         font-family: "Courier", monospace;
       }
       
@@ -52,15 +61,35 @@
       .links:hover, .links:focus, .links:active {
         background-color: rgb(50, 50, 50);
       }
+      
       .colored-background {
-        margin-top: 100px;
         background-color: white;
         padding: 20px;
       }
       
+      .our-mission-and-project {
+        margin-top: 25px;
+        padding: 20px;
+        font-family: "Helvetica", sans-serif;
+        color: white;
+        background-color: rgba(50, 50, 50, 0.75);
+      }
+      
+      .about-us-people {
+        position: relative;
+        font-size: 50px;
+        border: 3px solid black;
+        font-family: "Helvetica", sans-serif;
+        border-radius: 10px;
+        width: 40%;
+        height: 100px;
+      }
+      
       .about-us-imgs {
-        border: 1px dashed black;
         border-radius: 50%;
+        position: relative;
+        bottom: 100px;
+        right: 100px;
       }
       
       #heading {
@@ -98,17 +127,9 @@
       
       #play {
         position: relative;
-        bottom: 110px;
+        bottom: 10px;
         padding-top: 150px;
         padding-bottom: 95px;
-      }
-      
-      #our-mission {
-        margin-top: 50px;
-        padding: 20px;
-        font-family: "Helvetica", sans-serif;
-        color: white;
-        background-color: rgba(50, 50, 50, 0.75);
       }
       
       #background-img {
@@ -116,6 +137,31 @@
         top: 0px;
         z-index: -1;
       }
+      
+      #about-us {
+        margin-top: 50px;
+      }
+      
+      #jeff-pos {
+        top: 100px;
+        left: 100px;
+      }
+      
+      #caleb-pos {
+        float: right;
+        bottom: 85px;
+      }
+      
+      #ada-pos {
+        top: 295px;
+        left: 100px;
+      }
+      
+      #samuel-pos {
+        float: right;
+        bottom: 100px;
+      }
+      
     </style>
   </head>
   <body>
@@ -160,14 +206,14 @@
       <img src="https://static.euronews.com/articles/stories/04/03/37/22/1440x810_cmsv2_00552c61-5a59-51d2-89c5-3078243af9f2-4033722.jpg" alt="Station: Survival Gameplay" width="98.9%" height="100%" id="background-img">
       
       <!--Our Mission Section-->
-      <div id="our-mission">
+      <div id="our-mission" class="our-mission-and-project">
         <h2>Our Mission</h2>
         <p>
           Essay by Samuel
         </p>
       </div>
       <!--Our Project Section-->
-      <div id="our-project" class="colored-background">
+      <div id="our-project" class="our-mission-and-project">
         <h2>Our Project</h2>
         <p>
           Description by Samuel
@@ -175,10 +221,26 @@
       </div>
       
       <!--About Us Section-->
-      <div id="about-us" class="colored-background">
+      <div id="about-us" class="colored-background" style="padding-bottom: 400px;">
         <h2>About Us</h2>
-        <img src="https://assets.spaceappschallenge.org/media/images/WIN_20240828_19_09_57_Pro.2e16d0ba.fill-64x64.jpg" alt="Jeff Zhou" width="200px" height="200px" class="about-us-imgs">
-        <img src="https://images.spaceappschallenge.org/avatars/40k6q-IlkAU6zCicm3Abn4_9Hs0=/87395/fill-48x48/" alt="Caleb Li" width="200px" height="200px" class="about-us-imgs">
+        <p>Meet the Space Adventurers team!</p>
+        
+        <div class="about-us-people" id="jeff-pos">
+          <img src="https://assets.spaceappschallenge.org/media/images/WIN_20240828_19_09_57_Pro.2e16d0ba.fill-64x64.jpg" alt="Jeff Zhou" width="200px" height="200px" class="about-us-imgs">
+          <h3>Jeff Zhou</h3>
+        </div>
+        <div class="about-us-people" id="caleb-pos">
+          <img src="https://images.spaceappschallenge.org/avatars/40k6q-IlkAU6zCicm3Abn4_9Hs0=/87395/fill-48x48/" alt="Caleb Li" width="200px" height="200px" class="about-us-imgs">
+          <h3>Caleb Li</h3>
+        </div>
+        <div class="about-us-people" id="ada-pos">
+          <img src="https://assets.spaceappschallenge.org/media/images/cat_with_yarn.2e16d0ba.fill-64x64.png" width="200px" height="200px" class="about-us-imgs">
+          <h3 style="bottom: 255px;">Ada Lin</h3>
+        </div>
+        <div class="about-us-people" id="samuel-pos">
+          <img src="https://assets.spaceappschallenge.org/media/images/Curiousity.2e16d0ba.fill-64x64.png" alt="Samuel Lin" width="200px" height="200px" class="about-us-imgs">
+          <h3>Samuel Lin</h3>
+        </div>
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script>
