@@ -22,6 +22,12 @@
         right: 100px;
       }
       
+      h4 {
+        font-family: "Helvetica", sans-serif;
+        font-size: 25px;
+        color: white;
+      }
+      
       p {
         font-size: 20px;
         font-weight: bold;
@@ -90,6 +96,11 @@
         position: relative;
         bottom: 100px;
         right: 100px;
+      }
+      
+      .credits {
+        display: inline;
+        margin-left: 100px;
       }
       
       #heading {
@@ -162,6 +173,20 @@
         bottom: 100px;
       }
       
+      #footer {
+        margin-top: 50px;
+        background-color: black;
+        padding: 20px;
+        position: relative;
+        top: 8px;
+      }
+      
+      #credits-bar {
+        color: white;
+        list-style-type: none;
+        font-family: "Courier", monospace;
+        font-size: 15px;
+      }
     </style>
   </head>
   <body>
@@ -243,11 +268,19 @@
         </div>
       </div>
       
-      <!--Credits-->
-      <div>
-        
+      <!--Footer-->
+      <div id="footer">
+        <img src="Logo.png" width="200px" height="100px">
+        <h4>Thank you visiting our website! This is our submission to NASA Space Apps 2024.</h4>
+        <ul id="credits-bar">
+          <li class="credits">Caleb Li - Research</li>
+          <li class="credits">Ada Lin - Website Design</li>
+          <li class="credits">Samuel Lin - Website Text</li>
+          <li class="credits">Jeff Zhou - Website Coding</li>
+        </ul>
       </div>
     </div>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
       /* JavaScript Library jQuery */
@@ -259,10 +292,9 @@
       var window = this;
 
       // Functions
-      $.fn.followTo = function(pos) {
+      $.fn.followTo = function(startPos, pos) {
         var $this = this;
         var $window = $(window);
-        var startPos = 400;
         var endPos = pos + startPos;
         $window.scroll(function(e) {
           if ($window.scrollTop() >= pos) {
@@ -294,7 +326,7 @@
       });
       
       // SFX Animations
-      title.followTo(520);
+      title.followTo(400, 520);
     </script>
   </body>
 </html>
