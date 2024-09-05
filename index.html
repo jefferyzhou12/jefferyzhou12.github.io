@@ -168,7 +168,7 @@
     <!--Header-->
     <div id="heading">
       <a href="index.html">
-        <canvas id="logo"></canvas>
+        <img src="Logo.png" width="200px" height="100px" style="margin-left: 50px;">
       </a>
       <ul id="links-bar">
         <li class="links">
@@ -242,50 +242,13 @@
           <h3>Samuel Lin</h3>
         </div>
       </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script>
-      /* JavaScript Library Processing.js */
-      // Creates Logo
-      var logo = function (processingInstance) {
-        with (processingInstance) {
-          size(300, 100);
-          var backgroundColor = color(0, 0, 0);
-          background(backgroundColor);
-          rectMode(CENTER);
-          textAlign(CENTER, CENTER);
-          textFont(createFont("fantasy"), 20);
-          noStroke();
-          fill(255, 255, 255);
-          ellipse(width / 2, 50, 75, 75);
-          fill(0, 0, 0);
-          ellipse(width / 2 + 15, 40, 75, 75);
-          pushMatrix();
-          translate(width / 2 + 20, 40);
-          rotate(0.7);
-          fill(255, 255, 255);
-          rect(0, 0, 8, 50);
-          ellipse(0, -25, 10, 25);
-          stroke(0, 0, 0);
-          triangle(-4, 25, 4, 25, 0, 75);
-          noStroke();
-          triangle(-3, 25, -2, 35, -10, 30);
-          triangle(3, 25, 2, 35, 10, 30);
-          triangle(3, 10, 3, 25, 10, 27);
-          triangle(-3, 10, -3, 25, -10, 27);
-          popMatrix();
-          fill(backgroundColor, 150);
-          rect(width / 2, 75, 195, 20);
-          fill(255, 255, 255);
-          text("SPACE ADVENTURERS", width / 2, 75);
-        }
-      };
       
-      // Displays Logo
-      var canvas = document.getElementById("logo");
-      var processingInstance = new Processing(canvas, logo);
-    </script>
+      <!--Credits-->
+      <div>
+        
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
       /* JavaScript Library jQuery */
       // Varibles
