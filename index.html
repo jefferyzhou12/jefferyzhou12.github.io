@@ -4,6 +4,7 @@
   <head>
     <meta charset="utf-8">
     <title>Space Adventurers</title>
+    <link rel="shortcut icon" type="image.x-icon" href="favicon.ico">
     <style>
       /* CSS */
       body {
@@ -259,11 +260,11 @@
           <h3>Caleb Li</h3>
         </div>
         <div class="about-us-people" id="ada-pos">
-          <img src="https://assets.spaceappschallenge.org/media/images/cat_with_yarn.2e16d0ba.fill-64x64.png" width="200px" height="200px" class="about-us-imgs">
+          <img src="https://assets.spaceappschallenge.org/media/images/IMG_8942.2e16d0ba.fill-64x64.jpg" width="200px" height="200px" class="about-us-imgs">
           <h3 style="bottom: 255px;">Ada Lin</h3>
         </div>
         <div class="about-us-people" id="samuel-pos">
-          <img src="https://assets.spaceappschallenge.org/media/images/Curiousity.2e16d0ba.fill-64x64.png" alt="Samuel Lin" width="200px" height="200px" class="about-us-imgs">
+          <img src="https://assets.spaceappschallenge.org/media/images/Me_SUrfing.2e16d0ba.fill-64x64.jpg" alt="Samuel Lin" width="200px" height="200px" class="about-us-imgs">
           <h3>Samuel Lin</h3>
         </div>
       </div>
@@ -289,14 +290,13 @@
       var homeImg = $("#home-img");
       var title = $("#title");
       var backgroundImg = $("#background-img");
-      var window = this;
+      var $window = $(this);
 
       // Functions
       $.fn.followTo = function(startPos, pos) {
         var $this = this;
-        var $window = $(window);
         var endPos = pos + startPos;
-        $window.scroll(function(e) {
+        $window.scroll(function(event) {
           if ($window.scrollTop() >= pos) {
             $this.css({
               position: "absolute",
