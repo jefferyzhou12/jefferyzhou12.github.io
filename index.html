@@ -114,14 +114,13 @@
       }
       
       .about-us-people {
-        position: relative;
+        position: absolute;
         font-size: 50px;
         border: 3px solid black;
-        padding-bottom: 75px;
         font-family: "Helvetica", sans-serif;
         border-radius: 10px;
         width: 40%;
-        height: 100px;
+        height: 225px;
       }
       
       .about-us-imgs {
@@ -137,7 +136,7 @@
       }
       
       #heading {
-        position: fixed;
+        position: absolute;
         top: 0px;
         left: 0px;
         width: 1520px;
@@ -186,26 +185,27 @@
       
       #about-us {
         margin-top: 50px;
+        height: 500px;
       }
       
       #jeff-pos {
-        top: 100px;
-        left: 100px;
+        top: 2100px;
+        left: 125px;
       }
       
       #caleb-pos {
-        float: right;
-        bottom: 85px;
+        top: 2100px;
+        left: 875px;
       }
       
       #ada-pos {
-        top: 295px;
-        left: 100px;
+        top: 2450px;
+        left: 125px;
       }
       
       #samuel-pos {
-        float: right;
-        bottom: 100px;
+        top: 2450px;
+        left: 875px;
       }
       
       #footer {
@@ -299,8 +299,8 @@
         </div>
         <div class="about-us-people" id="ada-pos">
           <img src="https://assets.spaceappschallenge.org/media/images/IMG_8942.2e16d0ba.fill-64x64.jpg" width="200px" height="200px" class="about-us-imgs">
-          <h3 style="bottom: 255px;">Ada Lin</h3>
-          <hr style="bottom: 290px;">
+          <h3>Ada Lin</h3>
+          <hr>
         </div>
         <div class="about-us-people" id="samuel-pos">
           <img src="https://assets.spaceappschallenge.org/media/images/Me_SUrfing.2e16d0ba.fill-64x64.jpg" alt="Samuel Lin" width="200px" height="200px" class="about-us-imgs">
@@ -331,6 +331,7 @@
       var title = $("#title");
       var backgroundImg = $("#background-img");
       var $window = $(this);
+      var topOffset = parseInt(heading.css("top"));
 
       // Functions
       $.fn.followTo = function(startPos, pos) {
@@ -351,6 +352,13 @@
         });
       };
       
+      $window.scroll(function() {
+        var $this = $(this);
+        heading.css({
+          top: $this.scrollTop() + topOffset
+        });
+      });
+      
       // Hides Elements
       heading.hide();
       homeImg.hide();
@@ -365,7 +373,7 @@
         backgroundImg.show();
       });
       
-      // SFX Animations
+      // SFX
       title.followTo(400, 520);
     </script>
   </body>
