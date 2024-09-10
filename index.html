@@ -15,6 +15,7 @@
       }
       
       ::-webkit-scrollbar-track {
+        background-color: black;
         border: 2px solid white;
         border-radius: 7px;
       }
@@ -162,7 +163,7 @@
         padding: 5px;
         background-color: rgba(255, 255, 255, 0.75);
         font-size: 75px;
-        position: fixed;
+        position: absolute;
         left: 475px;
         top: 400px;
         width: 595px;
@@ -177,7 +178,7 @@
       }
       
       #background-img {
-        position: fixed;
+        position: absolute;
         top: 0px;
         width: 1505px;
         z-index: -1;
@@ -331,9 +332,18 @@
       var title = $("#title");
       var backgroundImg = $("#background-img");
       var $window = $(this);
-      var topOffset = parseInt(heading.css("top"));
-
-      // Functions
+      
+      // Functions\
+      $.fn.followY = function(element) {
+        var topOffset = parseInt(element.css("top"));
+        $window.scroll(function() {
+          var $this = $(this);
+          element.css({
+            top: $this.scrollTop() + topOffset
+          });
+        });
+      };
+      
       $.fn.followTo = function(startPos, pos) {
         var $this = this;
         var endPos = pos + startPos;
@@ -344,20 +354,10 @@
               top: endPos
             });
           } else {
-            $this.css({
-              position: "fixed",
-              top: startPos
-            });
+            $this.followTo($this);
           }
         });
       };
-      
-      $window.scroll(function() {
-        var $this = $(this);
-        heading.css({
-          top: $this.scrollTop() + topOffset
-        });
-      });
       
       // Hides Elements
       heading.hide();
@@ -375,6 +375,8 @@
       
       // SFX
       title.followTo(400, 520);
+      heading.followY(heading);
+      backgroundImg.followY(backgroundImg);
     </script>
   </body>
 </html>
