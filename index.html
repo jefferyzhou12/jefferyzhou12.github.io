@@ -1,7 +1,365 @@
-Skip to content
-Commands
-Search
 <!--HTML-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Space Adventurers</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <style>
+      /* CSS */
+      ::-webkit-scrollbar {
+        width: 15px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background-color: black;
+        border: 2px solid white;
+        border-radius: 7px;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background-color: white;
+        border: 2px solid white;
+        border-radius: 7px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background-color: black;
+      }
+
+      body {
+        background-color: black;
+      }
+
+      h2 {
+        font-family: "Helvetica", sans-serif;
+        font-size: 50px;
+      }
+
+      h3 {
+        float: right;
+        position: relative;
+        bottom: 40px;
+        right: 100px;
+      }
+
+      h4 {
+        font-family: "Helvetica", sans-serif;
+        font-size: 25px;
+        color: white;
+      }
+
+      p {
+        font-size: 20px;
+        font-weight: bold;
+        font-family: "Courier", monospace;
+      }
+
+      a {
+        text-decoration: none;
+        color: white;
+      }
+
+      button {
+        font-size: 25px;
+        font-weight: bold;
+        background-color: rgb(225, 225, 225);
+        width: 500px;
+        height: 75px;
+        position: absolute;
+        left: 500px;
+        top: 725px;
+        border: 5px solid rgb(100, 100, 100);
+        border-radius: 5px;
+      }
+
+      button:hover, button:focus, button:active {
+        background-color: rgb(200, 200, 200);
+      }
+
+      hr {
+        border-top: 2px dashed rgb(100, 100, 100);
+        width: 90%;
+        position: relative;
+        bottom: 130px;
+      }
+
+      .links {
+        display: inline;
+        background-color: black;
+        font-family: "Helvetica", sans-serif;
+        padding: 25px;
+        font-size: 25px;
+        border-radius: 10px;
+      }
+
+      .links:hover, .links:focus, .links:active {
+        background-color: rgb(50, 50, 50);
+      }
+
+      .indent {
+        margin-left: 50px;
+      }
+
+      .essay-credit {
+        font-size: 15px;
+      }
+
+      .colored-background {
+        background-color: white;
+        padding: 20px;
+        width: 1465px;
+      }
+
+      .transparent-background {
+        margin-top: 25px;
+        padding: 20px;
+        font-family: "Helvetica", sans-serif;
+        color: white;
+        background-color: rgba(50, 50, 50, 0.75);
+        width: 1465px;
+      }
+
+      .about-us-people {
+        position: absolute;
+        font-size: 50px;
+        border: 3px solid black;
+        font-family: "Helvetica", sans-serif;
+        border-radius: 10px;
+        width: 40%;
+        height: 375px;
+      }
+
+      .about-us-imgs {
+        border-radius: 50%;
+        position: relative;
+        bottom: 100px;
+        right: 100px;
+      }
+
+      .person-description {
+        position: relative;
+        bottom: 150px;
+        padding: 15px;
+      }
+
+      .credits {
+        display: inline;
+        margin-left: 100px;
+      }
+
+      #heading {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 1520px;
+        background-color: black;
+        z-index: 2;
+      }
+
+      #main {
+        margin-top: 100px;
+      }
+
+      #links-bar {
+        list-style-type: none;
+        color: white;
+        float: right;
+        position: relative;
+        right: 100px;
+        top: 25px;
+      }
+
+      #title {
+        font-family: "Helvetica", sans-serif;
+        padding: 5px;
+        background-color: rgba(255, 255, 255, 0.75);
+        font-size: 75px;
+        position: fixed;
+        left: 475px;
+        top: 400px;
+        width: 595px;
+        z-index: 1;
+      }
+
+      #play {
+        position: relative;
+        bottom: 4px;
+        padding-top: 150px;
+        padding-bottom: 150px;
+      }
+
+      #background-img {
+        position: fixed;
+        top: 0px;
+        width: 1505px;
+        z-index: -1;
+      }
+
+      #about-us {
+        margin-top: 50px;
+        height: 550px;
+      }
+
+      #jeff-pos {
+        top: 4100px;
+        left: 125px;
+      }
+
+      #caleb-pos {
+        top: 4100px;
+        left: 875px;
+      }
+
+      #ada-pos {
+        top: 4625px;
+        left: 125px;
+      }
+
+      #samuel-pos {
+        top: 4625px;
+        left: 875px;
+      }
+
+      #footer {
+        margin-top: 50px;
+        background-color: black;
+        padding: 20px;
+        position: relative;
+        right: 8px;
+        top: 8px;
+        width: 1481px;
+      }
+
+      #credits-bar {
+        color: white;
+        list-style-type: none;
+        font-family: "Courier", monospace;
+        font-size: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <!--Header-->
+    <div id="heading">
+      <a href="index.html">
+        <img src="Logo.png" width="200px" height="100px" style="margin-left: 50px;">
+      </a>
+      <ul id="links-bar">
+        <li class="links">
+          <a href="#play">Play</a>
+        </li>
+        -
+        <li class="links">
+          <a href="#how-to-play">How to Play</a>
+        </li>
+        -
+        <li class="links">
+          <a href="#our-project">Our Project</a>
+        </li>
+        -
+        <li class="links">
+          <a href="#about-us">About Us</a>
+        </li>
+      </ul>
+    </div>
+
+    <div id="main">
+      <!--Home Screen-->
+      <img src="https://cdn2.eandtmagazine.org/sites/default/files/styles/uncropped_medium/public/2024-05/web_iss-station-on-orbit-of-the-earth-planet-elements-of-this-image-furnished-by-nasa_Credit_dima_zel_iStock-1253695434_1600x900.png?itok=6B9UVGPK" alt="The International Space Station" width="1505px" id="home-img">
+      <h1 id="title">Station: Survival</h1>
+
+      <!--Play Section-->
+      <div id="play" class="colored-background">
+        <p>
+          <span class="indent">As</span> a solution to solve the problem of endless boredom, our team proposes a game crafted by Unity. Named <em>Station: Survival</em>, this game aims to incorporate an astronaut’s daily life and routine in a virtual world of obstacles and missions. In this game, the unexpected becomes expected, and from detrimental oxygen leaks to solar storms, these authentic scenarios become the expected in the game. As the events in this game progresses, astronauts learn to expect the unexpected, to prepare for anything, in a life-threatening situation.<br><br>
+<span class="indent">Mistakes</span> leading to great disasters are common in such risky missions in space, and through this game, astronauts play and learn, being entertained in a pressing environment. Containing necessities such as food, exercise, sleep, and others essential for daily life in space, astronauts learn to balance missions and personal interests with necessities in critical circumstances.<br><br>
+<span class="indent">Additionally,</span> life threatening issues are not unknown in space. With urgent operations, astronauts have to train their brain to think and process with haste in order to survive in this virtual world. From solar flares, which could disrupt radio waves and completely demolish technology, to oxygen leaks, which could pose a critical threat to life, these pressing situations force astronauts to concentrate to find a way out.<br><br>
+<span class="indent">A</span> realistic environment is believed to be easiest to apply in an actual situation. This game provides just that. Featuring food, sleeping bags, and other realistic components of space life, this game includes an immersive experience in a world which is as realistic as possible.<br><br>
+<span class="indent">A</span> game packed with action, pressing scenarios, realistic and immersive experience, risky missions, and more is undeniably a great one to play. Don’t just listen to this, why not check it out yourself?<br><br>
+          <span class="essay-credit">Essay by Samuel</span>
+        </p>
+        <a href="/stationsurvival">
+          <button>Try <em>Station: Survival</em> For Yourself!</button>
+        </a>
+      </div>
+
+      <!--Background Image-->
+      <img src="Station_At_Mars.jpg" alt="Station: Survival Gameplay" id="background-img">
+
+      <!--How to Play Section-->
+      <div id="how-to-play" class="transparent-background">
+        <h2>How to Play</h2>
+        <p>
+          Navigation:<br><br>
+          Use the WASD controls or the arrows on your keyboard to go left, right, forwards, or backwards.<br>
+          Use your cursor to direct your movement; point them in the direction you want to go along with the WASD or arrowkeys.<br><br><br>
+          Game Mechanics<br><br>
+          Hatches, or doors, will block your path when going through from module-to-module. In order to go through the hatches, click on the colliders to open them.<br>
+          The body scanner, which is the room with the switches along with the scanners on top, the front wall, and the side wall, will show you your muscle mass as well as your energy levels. In order to activate the scanner, click on the switches and move to the scanner area.<br>
+          In order to build muscle mass, click on the treadmill. You will automatically step off some time after running on the treadmill.<br>
+          In order to gain energy, click on the sleeping bags. You will automatically get up some time after too.<br>
+          In order to eat food, first click on the food to pick it up. After you pick it up, put the food in the food hydrator, the machine with all the nozzles, to make it edible to eat. After that, click ‘e’ to enjoy your virtual meal!<br><br><br>
+          Challenges and Missions<br><br>
+          Oxygen leaks are a common challenge aboard the space station. To find oxygen leaks, first the lights will turn red to alert you of oxygen leaks. In addition, oxygen or air will be blowing out of the places with the leaks. In order to fix them, click on the oxygen leaks. Please note that there might be multiple places of oxygen leaks, and you have to search the whole station for them. Please also note that the places with oxygen leaks you have just fixed may be leaking again.<br>
+          Solar Storms or Flares can be a situation aboard the space station far out in space sometimes. In the space station, the lights will turn red if there is a solar storm, just like if there were oxygen leaks. However, if you’ve searched the entire space station and don’t find oxygen leaks, then there is a solar storm occurring. In that case, go to the control module, which is the module with many switches but no oxygen vents, to not be confused with the body scanner area. If there is a solar storm, after clicking on the controls, it will either say, Solar Storm: None Detected, or Solar Storm: Detected. If solar storms are detected, then activate the solar bunker.<br>
+          *Remember, solar bunkers need a lot of electricity, and drain the space station’s battery. If the ship’s battery runs too low, then you could die.<br><br>
+          Warning: How you could die:<br>
+          If your muscle mass, energy levels, and protein levels are below the expected level, which is 20%, you could die.<br>
+          If your food supply runs too low, then you could also die.<br>
+          If oxygen leaks aren’t dealt with, then you could also die.<br>
+          Solar Storms can cause death from radiation poisoning.<br><br>
+          How you could win:<br>
+          The supply ship will be coming to fetch you off the space station. In order to win, survive until the supply ship comes, and once you click on the package inside, you win!<br><br><br>
+          Lastly, play the game and enjoy!<br><br>
+          <span class="essay-credit">Essay by Samuel</span>
+        </p>
+      </div>
+      <!--Our Project Section-->
+      <div id="our-project" class="transparent-background">
+        <h2>Our Project</h2>
+        <p>
+          Our project is addressing a situation of boredom in space, and, while astronauts do work, experiment, and work under an environment with low gravity. However, such situations can become very dire in some scenarios, where, as NPR states, boredom disincentives eating, and while undereating comes from a variety of circumstances, boredom is one major cause of this. Additionally, malnutrition can significantly alter and degrade an astronauts performance, affecting the astronauts wellbeing as well as the astronauts general output. However, to solve this detrimental problem, our team proposes a game, coded from Unity, to entertain the astronauts when they are otherwise bored. In this game, we propose a virtual situation where astronauts must learn to survive alongside a variety of obstacles. This virtual world contains some real-life situations where astronauts must learn how to power through and survive. Not only does our game provide a solution to the seemingly endless hours of boredom, it provides a platform where essential aspects such as critical thinking and problem-solving come into play, with endless fun in a challenging scenario. This type of gaming technology provides an immersive gaming environment and endless entertainment while exercising the astronaut’s cognitive thinking. Not only is this game a truly noteworthy step into eliminating extracerresital boredom while strengthening the astronauts’ toughness and ableness.<br><br>
+          <span class="essay-credit">Essay by Samuel Lin.</span>
+        </p>
+      </div>
+
+      <!--About Us Section-->
+      <div id="about-us" class="colored-background" style="padding-bottom: 700px;">
+        <h2>About Us</h2>
+        <p>Meet the Space Adventurers team!</p>
+
+        <div class="about-us-people" id="jeff-pos">
+          <img src="https://assets.spaceappschallenge.org/media/images/WIN_20240828_19_09_57_Pro.2e16d0ba.fill-64x64.jpg" alt="Jeff Zhou" width="200px" height="200px" class="about-us-imgs">
+          <h3>Jeff Zhou</h3>
+          <hr>
+          <p class="person-description">
+            As the website producer and Unity game developer, Jeffery’s strong platform in coding languages such as C#, HTML, CSS, and JavaScript ensure that the gaming software, website construction and display all runs smoothly. With a solid understanding in handling game development as well as coding a website, Jeff will confirm the success of the game and website, contributing to the overall success of this project.
+          </p>
+        </div>
+        <div class="about-us-people" id="caleb-pos">
+          <img src="https://assets.spaceappschallenge.org/media/images/IMG_3377_9sJzqMt.2e16d0ba.fill-64x64.jpg" alt="Caleb Li" width="200px" height="200px" class="about-us-imgs">
+          <h3>Caleb Li</h3>
+          <hr>
+          <p class="person-description">
+            Caleb’s role is primarily research in contribution to this project. With past experiences as well as well established researching abilities, Caleb’s role in this project is undeniably valuable. As research will play a large role to the success of this project, having a person notably in charge of this is vital, especially with a firm foundation in the art of researching.
+          </p>
+        </div>
+        <div class="about-us-people" id="ada-pos">
+          <img src="https://assets.spaceappschallenge.org/media/images/IMG_8942.2e16d0ba.fill-64x64.jpg" width="200px" height="200px" class="about-us-imgs">
+          <h3>Ada Lin</h3>
+          <hr>
+          <p class="person-description">
+            Art and Science come hand and hand, and entrusting the area of art and design to her is crucial for the overall success of this project. As a website not only contains numbers, codes, and content, the overall design for websites is what defines a website. With the domain of art stretching into the domain of science, we then find out these two areas are complimentary. As art plays a key role in this project, this role is a great contribution.
+          </p>
+        </div>
+        <div class="about-us-people" id="samuel-pos">
+          <img src="https://assets.spaceappschallenge.org/media/images/Me_SUrfing.2e16d0ba.fill-64x64.jpg" alt="Samuel Lin" width="200px" height="200px" class="about-us-imgs">
+          <h3>Samuel Lin</h3>
+          <hr>
           <p class="person-description">
             Responsible for handling the website and project content, as well as the project submission, Samuel has a well built foundation in writing and analysis of data. With his contribution including technical reports, writing, and content, factual information in the form of writing is overall important. As reports translate research into words, this role is crucial.
           </p>
