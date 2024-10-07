@@ -2,79 +2,71 @@ Skip to content
 Commands
 Search
 <!--HTML-->
-      }
+          <p class="person-description">
+            Responsible for handling the website and project content, as well as the project submission, Samuel has a well built foundation in writing and analysis of data. With his contribution including technical reports, writing, and content, factual information in the form of writing is overall important. As reports translate research into words, this role is crucial.
+          </p>
+        </div>
+      </div>
 
-      #jeff-pos {
-        top: 4100px;
-        left: 125px;
-      }
-
-      #caleb-pos {
-        top: 4100px;
-        left: 875px;
-      }
-
-      #ada-pos {
-        top: 4625px;
-        left: 125px;
-      }
-
-      #samuel-pos {
-        top: 4625px;
-        left: 875px;
-      }
-
-      #footer {
-        margin-top: 50px;
-        background-color: black;
-        padding: 20px;
-        position: relative;
-        right: 8px;
-        top: 8px;
-        width: 1481px;
-      }
-
-      #credits-bar {
-        color: white;
-        list-style-type: none;
-        font-family: "Courier", monospace;
-        font-size: 15px;
-      }
-    </style>
-  </head>
-  <body>
-    <!--Header-->
-    <div id="heading">
-      <a href="index.html">
-        <img src="Logo.png" width="200px" height="100px" style="margin-left: 50px;">
-      </a>
-      <ul id="links-bar">
-        <li class="links">
-          <a href="#play">Play</a>
-        </li>
-        -
-        <li class="links">
-          <a href="#how-to-play">How to Play</a>
-        </li>
-        -
-        <li class="links">
-          <a href="#our-project">Our Project</a>
-        </li>
-        -
-        <li class="links">
-          <a href="#about-us">About Us</a>
-        </li>
-      </ul>
+      <!--Footer-->
+      <div id="footer">
+        <img src="Logo.png" width="200px" height="100px">
+        <h4>Thank you for visiting our website! This is our submission to NASA Space Apps 2024.</h4>
+        <ul id="credits-bar">
+          <li class="credits">Caleb Li - Research</li>
+          <li class="credits">Ada Lin - Website Design</li>
+          <li class="credits">Samuel Lin - Website Text</li>
+          <li class="credits">Jeff Zhou - Website Coding</li>
+        </ul>
+      </div>
     </div>
 
-    <div id="main">
-      <!--Home Screen-->
-      <img src="https://cdn2.eandtmagazine.org/sites/default/files/styles/uncropped_medium/public/2024-05/web_iss-station-on-orbit-of-the-earth-planet-elements-of-this-image-furnished-by-nasa_Credit_dima_zel_iStock-1253695434_1600x900.png?itok=6B9UVGPK" alt="The International Space Station" width="1505px" id="home-img">
-      <h1 id="title">Station: Survival</h1>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      /* JavaScript Library jQuery */
+      // Varibles
+      var heading = $("#heading");
+      var homeImg = $("#home-img");
+      var title = $("#title");
+      var backgroundImg = $("#background-img");
+      var $window = $(this);
 
-      <!--Play Section-->
-      <div id="play" class="colored-background">
-        <p>
-          <span class="indent">As</span> a solution to solve the problem of endless boredom, our team proposes a game crafted by Unity. Named <em>Station: Survival</em>, this game aims to incorporate an astronaut’s daily life and routine in a virtual world of obstacles and missions. In this game, the unexpected becomes expected, and from detrimental oxygen leaks to solar storms, these authentic scenarios become the expected in the game. As the events in this game progresses, astronauts learn to expect the unexpected, to prepare for anything, in a life-threatening situation.<br><br>
+      // Functions
+      $.fn.followTo = function (startPos, pos) {
+        var $this = this;
+        var endPos = pos + startPos;
+        $window.scroll(function (event) {
+          if ($window.scrollTop() >= pos) {
+            $this.css({
+              position: "absolute",
+              top: endPos,
+            });
+          } else {
+            $this.css({
+              position: "fixed",
+              top: startPos
+            });
+          }
+        });
+      };
+
+      // Hides Elements
+      heading.hide();
+      homeImg.hide();
+      title.hide();
+      backgroundImg.hide();
+
+      // Starting Animations
+      heading.slideDown(1000, function () {
+        title.slideDown(750);
+      });
+
+      homeImg.fadeIn(2000, function () {
+        backgroundImg.show();
+      });
+
+      // SFX
+      title.followTo(400, 520);
+    </script>
+  </body>
 </html>
-- Replit
